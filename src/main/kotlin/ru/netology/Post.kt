@@ -22,9 +22,12 @@ data class Post(
     val canEdit: Boolean,
     val isPinned: Any,
     val markedAsAds: Boolean,
-    val IsFavorite: Boolean,
+    val isFavorite: Boolean,
     val donut: Any,
     val postponedId: Int
-    ) {
+) {
 
+    //    val post = Post(1,1,1,1,1,"1",1,1,true,
+//        1,1,1,1,1,1,true,true,1,true,
+//        true, 1,1,)
 }
