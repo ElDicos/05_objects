@@ -17,11 +17,13 @@ object WallService {
     fun update(post: Post): Boolean {
         for ((index, postId) in posts.withIndex())
             if (post.id == postId.id) {
-                val (id, _, fromId, createdBy, _,
-                    text, replyOwnerId, replyPostId, friendsOnly, comments,
-                    copyright, likes, reports, views, singerId,
-                    canPin, canEdit, isPinned, markedAsAds, isFavorite,
-                    donut, postponedId) = post
+                val (
+                    id, _, fromId, createdBy, _, text, replyOwnerId,
+                    replyPostId, friendsOnly, comments, copyright, likes,
+                    reports, views, postType, postSource, geo, singerId,
+                    copyHistory, canPin, canDelete, canEdit, isPinned,
+                    markedAsAds, isFavorite, donut, postponedId,
+                ) = post
                 posts[index].copy(
                     id = id,
                     fromId = fromId,
@@ -35,10 +37,15 @@ object WallService {
                     likes = likes,
                     reports = reports,
                     views = views,
+                    postType = postType,
+                    postSource = postSource,
+                    geo = geo,
                     singerId = singerId,
+                    copyHistory = copyHistory,
                     canPin = canPin,
+                    canDelete = canDelete,
                     canEdit = canEdit,
-                    isPinned = isPinned,
+                    isPinned = singerId,
                     markedAsAds = markedAsAds,
                     isFavorite = isFavorite,
                     donut = donut,

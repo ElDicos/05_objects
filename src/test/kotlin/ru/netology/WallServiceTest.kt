@@ -9,14 +9,7 @@ class WallServiceTest {
 
     @Test
     fun add_shouldIdNotEqualsZero() {
-        val post = Post(
-            0, 1, 1, 1, 1, "1",
-            1, 1, true,
-            1, 1, 1, 1,
-            1, 1, true, true,
-            1, true,
-            true, 1, 1,
-        )
+        val post = Post(postSource = 0, geo = 0, copyHistory = emptyArray())
         val testPost = WallService.add(post)
         WallService.add(post)
 
@@ -27,20 +20,8 @@ class WallServiceTest {
 
     @Test
     fun update_shouldTrueCorrect() {
-        val post = Post(
-            1, 1, 1, 1,
-            1, "1", 1, 1, true,
-            1, 1, 1, 1, 1, 1,
-            true, true, 1, true,
-            true, 1, 1,
-        )
-        val postUpdate = Post(
-            3, 2, 2, 2,
-            2, "2", 2, 2, false,
-            2, 2, 2, 2, 2, 2,
-            false, false, 2, false,
-            false, 2, 2,
-        )
+        val post = Post(postSource = 0, geo = 0, copyHistory = emptyArray())
+        val postUpdate = Post(id = 1, postSource = 0, geo = 0, copyHistory = emptyArray())
 
         WallService.add(post)
         WallService.add(post)
@@ -55,20 +36,8 @@ class WallServiceTest {
 
     @Test
     fun update_shouldFalseCorrect() {
-        val post = Post(
-            1, 1, 1, 1,
-            1, "1", 1, 1, true,
-            1, 1, 1, 1, 1, 1,
-            true, true, 1, true,
-            true, 1, 1,
-        )
-        val postUpdate = Post(
-            100, 2, 2, 2,
-            2, "2", 2, 2, false,
-            2, 2, 2, 2, 2, 2,
-            false, false, 2, false,
-            false, 2, 2,
-        )
+        val post = Post(postSource = 0, geo = 0, copyHistory = emptyArray())
+        val postUpdate = Post(id = 100, postSource = 0, geo = 0, copyHistory = emptyArray())
 
         WallService.add(post)
         WallService.add(post)
