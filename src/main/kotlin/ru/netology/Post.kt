@@ -19,6 +19,7 @@ data class Post(
     val views: Int = 0,
     val postType: String = "Default",
     val postSource: Any?,
+    val attachments: Array<Attachment>,
     val geo: Any?,
     val singerId: Int = 0,
     val copyHistory: Array<Any>?,
@@ -29,6 +30,6 @@ data class Post(
     val markedAsAds: Boolean = true,
     val isFavorite: Boolean = true,
     val donut: Any = 0,
-    val postponedId: Int = 0
+    val postponedId: Int = 0,
 ) {
 }

@@ -9,7 +9,9 @@ class WallServiceTest {
 
     @Test
     fun add_shouldIdNotEqualsZero() {
-        val post = Post(postSource = 0, geo = 0, copyHistory = emptyArray())
+        var array = emptyArray<Attachment>()
+        array.plus(PhotoAttachment("photo", Photo()))
+        val post = Post(postSource = 0, attachments = array, geo = 0, copyHistory = emptyArray())
         val testPost = WallService.add(post)
         WallService.add(post)
 
@@ -20,8 +22,10 @@ class WallServiceTest {
 
     @Test
     fun update_shouldTrueCorrect() {
-        val post = Post(postSource = 0, geo = 0, copyHistory = emptyArray())
-        val postUpdate = Post(id = 1, postSource = 0, geo = 0, copyHistory = emptyArray())
+        var array = emptyArray<Attachment>()
+        array.plus(PhotoAttachment("photo", Photo()))
+        val post = Post(postSource = 0, attachments = array, geo = 0, copyHistory = emptyArray())
+        val postUpdate = Post(id = 1, postSource = 0, attachments = array, geo = 0, copyHistory = emptyArray())
 
         WallService.add(post)
         WallService.add(post)
@@ -36,8 +40,10 @@ class WallServiceTest {
 
     @Test
     fun update_shouldFalseCorrect() {
-        val post = Post(postSource = 0, geo = 0, copyHistory = emptyArray())
-        val postUpdate = Post(id = 100, postSource = 0, geo = 0, copyHistory = emptyArray())
+        var array = emptyArray<Attachment>()
+        array.plus(PhotoAttachment("photo", Photo()))
+        val post = Post(postSource = 0, attachments = array, geo = 0, copyHistory = emptyArray())
+        val postUpdate = Post(id = 100, postSource = 0, attachments = array, geo = 0, copyHistory = emptyArray())
 
         WallService.add(post)
         WallService.add(post)
