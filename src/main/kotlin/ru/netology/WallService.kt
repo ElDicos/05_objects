@@ -20,7 +20,7 @@ object WallService {
                 val (
                     id, _, fromId, createdBy, _, text, replyOwnerId,
                     replyPostId, friendsOnly, comments, copyright, likes,
-                    reports, views, postType, postSource, geo, singerId,
+                    reports, views, postType, postSource, attachments, geo, singerId,
                     copyHistory, canPin, canDelete, canEdit, isPinned,
                     markedAsAds, isFavorite, donut, postponedId,
                 ) = post
@@ -39,6 +39,7 @@ object WallService {
                     views = views,
                     postType = postType,
                     postSource = postSource,
+                    attachments = attachments,
                     geo = geo,
                     singerId = singerId,
                     copyHistory = copyHistory,
